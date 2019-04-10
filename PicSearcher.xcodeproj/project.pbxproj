@@ -14,6 +14,7 @@
 		E721F9AC225E36D9005B39A0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E721F9AA225E36D9005B39A0 /* LaunchScreen.storyboard */; };
 		E721F9B7225E36D9005B39A0 /* PicSearcherTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E721F9B6225E36D9005B39A0 /* PicSearcherTests.swift */; };
 		E721F9C2225E36D9005B39A0 /* PicSearcherUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E721F9C1225E36D9005B39A0 /* PicSearcherUITests.swift */; };
+		E7F72DE4225E3894005808AA /* Cartfile in Resources */ = {isa = PBXBuildFile; fileRef = E7F72DE3225E3894005808AA /* Cartfile */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +48,7 @@
 		E721F9BD225E36D9005B39A0 /* PicSearcherUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PicSearcherUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E721F9C1225E36D9005B39A0 /* PicSearcherUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PicSearcherUITests.swift; sourceTree = "<group>"; };
 		E721F9C3225E36D9005B39A0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E7F72DE3225E3894005808AA /* Cartfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Cartfile; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,6 +79,7 @@
 		E721F995225E36D8005B39A0 = {
 			isa = PBXGroup;
 			children = (
+				E7F72DE3225E3894005808AA /* Cartfile */,
 				E721F9A0225E36D8005B39A0 /* PicSearcher */,
 				E721F9B5225E36D9005B39A0 /* PicSearcherTests */,
 				E721F9C0225E36D9005B39A0 /* PicSearcherUITests */,
@@ -232,6 +235,7 @@
 			files = (
 				E721F9AC225E36D9005B39A0 /* LaunchScreen.storyboard in Resources */,
 				E721F9A9225E36D9005B39A0 /* Assets.xcassets in Resources */,
+				E7F72DE4225E3894005808AA /* Cartfile in Resources */,
 				E721F9A7225E36D8005B39A0 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -455,6 +459,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = FY7P59XUMB;
+				FRAMEWORK_SEARCH_PATHS = "\"$(SRCROOT)/Carthage/Build/iOS\"";
 				INFOPLIST_FILE = PicSearcher/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -474,6 +479,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = FY7P59XUMB;
+				FRAMEWORK_SEARCH_PATHS = "\"$(SRCROOT)/Carthage/Build/iOS\"";
 				INFOPLIST_FILE = PicSearcher/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
