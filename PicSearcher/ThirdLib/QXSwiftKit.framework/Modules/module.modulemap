@@ -1,0 +1,11 @@
+framework module QXSwiftKit {
+  umbrella header "QXSwiftKit.h"
+
+  export *
+  module * { export * }
+}
+
+module QXSwiftKit.Swift {
+    header "QXSwiftKit-Swift.h"
+    requires objc
+}
