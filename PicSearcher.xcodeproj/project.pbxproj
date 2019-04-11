@@ -44,6 +44,15 @@
 		E7F72EB0225F5608005808AA /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7F72EAF225F5608005808AA /* HomeViewModel.swift */; };
 		E7F72EB2225F5885005808AA /* HomeViewDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7F72EB1225F5885005808AA /* HomeViewDataProvider.swift */; };
 		E7F72EB4225F69D9005808AA /* LocalizedStrings.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7F72EB3225F69D9005808AA /* LocalizedStrings.swift */; };
+		E7F72EB7225F9498005808AA /* SearchSuccessListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7F72EB6225F9498005808AA /* SearchSuccessListViewController.swift */; };
+		E7F72EB9225F94CA005808AA /* SearchSuccessListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7F72EB8225F94CA005808AA /* SearchSuccessListViewModel.swift */; };
+		E7F72EBB225F9613005808AA /* SearchSuccessListDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7F72EBA225F9613005808AA /* SearchSuccessListDataProvider.swift */; };
+		E7F72EBD225F9691005808AA /* SearchSuccessListProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7F72EBC225F9691005808AA /* SearchSuccessListProtocols.swift */; };
+		E7F72EBF225FDDA3005808AA /* MJRefresh.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E7F72EBE225FDDA3005808AA /* MJRefresh.framework */; };
+		E7F72EC1225FE0DA005808AA /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7F72EC0225FE0DA005808AA /* Extensions.swift */; };
+		E7F72EC3225FE29D005808AA /* PhotoCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7F72EC2225FE29D005808AA /* PhotoCollectionViewCell.swift */; };
+		E7F72EC4225FE81C005808AA /* MJRefresh.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E7F72EBE225FDDA3005808AA /* MJRefresh.framework */; };
+		E7F72EC5225FE81C005808AA /* MJRefresh.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = E7F72EBE225FDDA3005808AA /* MJRefresh.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -75,6 +84,7 @@
 				E7F72E94225F453C005808AA /* ToastSwiftFramework.framework in Embed Frameworks */,
 				E7F72E6C225E802F005808AA /* QXSwiftKit.framework in Embed Frameworks */,
 				E7F72E9C225F455C005808AA /* Alamofire.framework in Embed Frameworks */,
+				E7F72EC5225FE81C005808AA /* MJRefresh.framework in Embed Frameworks */,
 				E7F72E9A225F455C005808AA /* IQKeyboardManagerSwift.framework in Embed Frameworks */,
 				E7F72E98225F455C005808AA /* SnapKit.framework in Embed Frameworks */,
 			);
@@ -122,6 +132,13 @@
 		E7F72EAF225F5608005808AA /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		E7F72EB1225F5885005808AA /* HomeViewDataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewDataProvider.swift; sourceTree = "<group>"; };
 		E7F72EB3225F69D9005808AA /* LocalizedStrings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalizedStrings.swift; sourceTree = "<group>"; };
+		E7F72EB6225F9498005808AA /* SearchSuccessListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchSuccessListViewController.swift; sourceTree = "<group>"; };
+		E7F72EB8225F94CA005808AA /* SearchSuccessListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchSuccessListViewModel.swift; sourceTree = "<group>"; };
+		E7F72EBA225F9613005808AA /* SearchSuccessListDataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchSuccessListDataProvider.swift; sourceTree = "<group>"; };
+		E7F72EBC225F9691005808AA /* SearchSuccessListProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchSuccessListProtocols.swift; sourceTree = "<group>"; };
+		E7F72EBE225FDDA3005808AA /* MJRefresh.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MJRefresh.framework; path = Carthage/Build/iOS/MJRefresh.framework; sourceTree = SOURCE_ROOT; };
+		E7F72EC0225FE0DA005808AA /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		E7F72EC2225FE29D005808AA /* PhotoCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoCollectionViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -130,10 +147,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				E7F72EA6225F50DC005808AA /* SDWebImage.framework in Frameworks */,
+				E7F72EC4225FE81C005808AA /* MJRefresh.framework in Frameworks */,
 				E7F72EA7225F50DC005808AA /* SKPhotoBrowser.framework in Frameworks */,
 				E7F72EA8225F50DC005808AA /* SnapKit.framework in Frameworks */,
 				E7F72EA9225F50DC005808AA /* ToastSwiftFramework.framework in Frameworks */,
 				E7F72EAA225F50DC005808AA /* IQKeyboardManagerSwift.framework in Frameworks */,
+				E7F72EBF225FDDA3005808AA /* MJRefresh.framework in Frameworks */,
 				E7F72EAB225F50DC005808AA /* Alamofire.framework in Frameworks */,
 				E7F72EAC225F50DC005808AA /* QXSwiftKit.framework in Frameworks */,
 			);
@@ -234,6 +253,7 @@
 		E7F72DEA225E4378005808AA /* Frontend */ = {
 			isa = PBXGroup;
 			children = (
+				E7F72EB5225F945C005808AA /* SearchResultList */,
 				E7F72DF6225E4807005808AA /* Home */,
 				E7F72DFA225E70F8005808AA /* Colors.swift */,
 				E7F72E6E225E80A6005808AA /* UIConstants.swift */,
@@ -259,6 +279,7 @@
 				E7F72E89225E8D34005808AA /* StringMask.swift */,
 				E7F72EA3225F48CD005808AA /* IndicatorButton.swift */,
 				E7F72EB3225F69D9005808AA /* LocalizedStrings.swift */,
+				E7F72EC0225FE0DA005808AA /* Extensions.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -266,6 +287,7 @@
 		E7F72DFC225E724F005808AA /* ThirdLib */ = {
 			isa = PBXGroup;
 			children = (
+				E7F72EBE225FDDA3005808AA /* MJRefresh.framework */,
 				E7F72E7B225E819B005808AA /* SDWebImage.framework */,
 				E7F72E78225E819B005808AA /* SKPhotoBrowser.framework */,
 				E7F72E79225E819B005808AA /* SnapKit.framework */,
@@ -308,6 +330,18 @@
 			children = (
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		E7F72EB5225F945C005808AA /* SearchResultList */ = {
+			isa = PBXGroup;
+			children = (
+				E7F72EB6225F9498005808AA /* SearchSuccessListViewController.swift */,
+				E7F72EB8225F94CA005808AA /* SearchSuccessListViewModel.swift */,
+				E7F72EBA225F9613005808AA /* SearchSuccessListDataProvider.swift */,
+				E7F72EBC225F9691005808AA /* SearchSuccessListProtocols.swift */,
+				E7F72EC2225FE29D005808AA /* PhotoCollectionViewCell.swift */,
+			);
+			path = SearchResultList;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -467,11 +501,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				E721F9A2225E36D8005B39A0 /* AppDelegate.swift in Sources */,
+				E7F72EC3225FE29D005808AA /* PhotoCollectionViewCell.swift in Sources */,
 				E7F72E8A225E8D34005808AA /* StringMask.swift in Sources */,
 				E7F72E6F225E80A6005808AA /* UIConstants.swift in Sources */,
 				E7F72E81225E837B005808AA /* NetworkMonitor.swift in Sources */,
+				E7F72EB9225F94CA005808AA /* SearchSuccessListViewModel.swift in Sources */,
 				E7F72EB4225F69D9005808AA /* LocalizedStrings.swift in Sources */,
 				E7F72EAE225F55E1005808AA /* HomeViewProtocols.swift in Sources */,
+				E7F72EC1225FE0DA005808AA /* Extensions.swift in Sources */,
+				E7F72EB7225F9498005808AA /* SearchSuccessListViewController.swift in Sources */,
+				E7F72EBB225F9613005808AA /* SearchSuccessListDataProvider.swift in Sources */,
 				E7F72E86225E84FF005808AA /* FlickrSearchApiResponseModel.swift in Sources */,
 				E7F72DFB225E70F8005808AA /* Colors.swift in Sources */,
 				E7F72EB0225F5608005808AA /* HomeViewModel.swift in Sources */,
@@ -479,6 +518,7 @@
 				E7F72EA4225F48CD005808AA /* IndicatorButton.swift in Sources */,
 				E7F72EB2225F5885005808AA /* HomeViewDataProvider.swift in Sources */,
 				E7F72E88225E85F6005808AA /* FlickSearchResponseCacher.swift in Sources */,
+				E7F72EBD225F9691005808AA /* SearchSuccessListProtocols.swift in Sources */,
 				E7F72E84225E843B005808AA /* FlickrSearchApiService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

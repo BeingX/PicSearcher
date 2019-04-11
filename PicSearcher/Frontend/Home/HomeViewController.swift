@@ -10,7 +10,7 @@ import UIKit
 
 struct HomeViewUX {
     static let BackgroundColor = UIConstants.systemColor
-    static let SearchViewTop: CGFloat = 30
+    static let SearchViewTop: CGFloat = 120
     static let SearchBarHeight: CGFloat = 35
     static let GoButtonDefaultImage: UIImage? = UIImage(named: "go")
     static let GoButtonHeight: CGFloat = 35
@@ -43,7 +43,7 @@ class HomeViewController: UIViewController {
         searchBar.delegate = self
         dataProvider = HomeViewDataProvider(view: self)
         view.backgroundColor = HomeViewUX.BackgroundColor
-       goButton.addTarget(self, action: #selector(goQuery), for: .touchUpInside)
+        goButton.addTarget(self, action: #selector(goQuery), for: .touchUpInside)
     }
     func addSubview() {
         view.addSubview(goButton)
@@ -67,10 +67,15 @@ class HomeViewController: UIViewController {
         guard let text = searchBar.text?.trim(), !text.isEmpty else {
             return
         }
-        dataProvider?.queryWith(keyWord: text)
+        dataProvider?.searchAction(searchBarText: text)
     }
 }
 extension HomeViewController: HomeViewInputProtocol {
+    func pushSuccessView(searchText: String, firstPage: FlickrSearchApiResponseModel.Photos) {
+        let vc = SearchSuccessListViewController(searchText: searchText, firstPage: firstPage)
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
+    
     func updateView(viewModel: HomeViewModel) {
         if viewModel.isLoading {
             goButton.showLoadingFace()

@@ -4,3 +4,4 @@ github "rs/SDWebImage"                      "4.1.0"
 github "hackiftekhar/IQKeyboardManager"     ~> 6.0.4
 github "scalessec/Toast-Swift" ~> 5.0.0
 github "suzuki-0000/SKPhotoBrowser"
+github "CoderMJLee/MJRefresh"

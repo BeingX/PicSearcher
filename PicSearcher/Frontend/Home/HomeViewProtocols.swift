@@ -12,9 +12,10 @@ import Foundation
 protocol HomeViewInputProtocol: AnyObject {
     func updateView(viewModel: HomeViewModel) -> Swift.Void
     func updateErrorInfo(errorDescription: String) -> Swift.Void
+    func pushSuccessView(searchText: String, firstPage: FlickrSearchApiResponseModel.Photos) -> Swift.Void
 }
 
 protocol HomeViewOutputProtocol: AnyObject {
     var view: HomeViewInputProtocol? {get set}
-    func queryWith(keyWord: String) -> Swift.Void
+    func searchAction(searchBarText: String) -> Swift.Void
 }
