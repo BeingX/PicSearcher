@@ -16,20 +16,34 @@
 		E7F72DF0225E4766005808AA /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = E7F72DF2225E4766005808AA /* InfoPlist.strings */; };
 		E7F72DF8225E4816005808AA /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7F72DF7225E4816005808AA /* HomeViewController.swift */; };
 		E7F72DFB225E70F8005808AA /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7F72DFA225E70F8005808AA /* Colors.swift */; };
-		E7F72E6B225E802F005808AA /* QXSwiftKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E7F72E67225E800A005808AA /* QXSwiftKit.framework */; };
 		E7F72E6C225E802F005808AA /* QXSwiftKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = E7F72E67225E800A005808AA /* QXSwiftKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		E7F72E6F225E80A6005808AA /* UIConstantsswift.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7F72E6E225E80A6005808AA /* UIConstantsswift.swift */; };
-		E7F72E72225E8165005808AA /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E7F72E70225E8159005808AA /* Alamofire.framework */; };
-		E7F72E77225E8187005808AA /* IQKeyboardManagerSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E7F72E76225E8187005808AA /* IQKeyboardManagerSwift.framework */; };
-		E7F72E7C225E819B005808AA /* SKPhotoBrowser.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E7F72E78225E819B005808AA /* SKPhotoBrowser.framework */; };
-		E7F72E7D225E819B005808AA /* SnapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E7F72E79225E819B005808AA /* SnapKit.framework */; };
-		E7F72E7E225E819B005808AA /* ToastSwiftFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E7F72E7A225E819B005808AA /* ToastSwiftFramework.framework */; };
-		E7F72E7F225E819B005808AA /* SDWebImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E7F72E7B225E819B005808AA /* SDWebImage.framework */; };
+		E7F72E6F225E80A6005808AA /* UIConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7F72E6E225E80A6005808AA /* UIConstants.swift */; };
 		E7F72E81225E837B005808AA /* NetworkMonitor.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7F72E80225E837B005808AA /* NetworkMonitor.swift */; };
 		E7F72E84225E843B005808AA /* FlickrSearchApiService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7F72E83225E843B005808AA /* FlickrSearchApiService.swift */; };
 		E7F72E86225E84FF005808AA /* FlickrSearchApiResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7F72E85225E84FF005808AA /* FlickrSearchApiResponseModel.swift */; };
 		E7F72E88225E85F6005808AA /* FlickSearchResponseCacher.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7F72E87225E85F6005808AA /* FlickSearchResponseCacher.swift */; };
 		E7F72E8A225E8D34005808AA /* StringMask.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7F72E89225E8D34005808AA /* StringMask.swift */; };
+		E7F72E8E225F43AB005808AA /* FlickrSearchApiServiceTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7F72E8D225F43AB005808AA /* FlickrSearchApiServiceTest.swift */; };
+		E7F72E90225F43C2005808AA /* StringMaskTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7F72E8F225F43C2005808AA /* StringMaskTest.swift */; };
+		E7F72E92225F4526005808AA /* SDWebImage.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = E7F72E7B225E819B005808AA /* SDWebImage.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		E7F72E94225F453C005808AA /* ToastSwiftFramework.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = E7F72E7A225E819B005808AA /* ToastSwiftFramework.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		E7F72E96225F455C005808AA /* SKPhotoBrowser.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = E7F72E78225E819B005808AA /* SKPhotoBrowser.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		E7F72E98225F455C005808AA /* SnapKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = E7F72E79225E819B005808AA /* SnapKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		E7F72E9A225F455C005808AA /* IQKeyboardManagerSwift.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = E7F72E76225E8187005808AA /* IQKeyboardManagerSwift.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		E7F72E9C225F455C005808AA /* Alamofire.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = E7F72E70225E8159005808AA /* Alamofire.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		E7F72E9F225F46DA005808AA /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = E7F72EA1225F46DA005808AA /* Localizable.strings */; };
+		E7F72EA4225F48CD005808AA /* IndicatorButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7F72EA3225F48CD005808AA /* IndicatorButton.swift */; };
+		E7F72EA6225F50DC005808AA /* SDWebImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E7F72E7B225E819B005808AA /* SDWebImage.framework */; };
+		E7F72EA7225F50DC005808AA /* SKPhotoBrowser.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E7F72E78225E819B005808AA /* SKPhotoBrowser.framework */; };
+		E7F72EA8225F50DC005808AA /* SnapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E7F72E79225E819B005808AA /* SnapKit.framework */; };
+		E7F72EA9225F50DC005808AA /* ToastSwiftFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E7F72E7A225E819B005808AA /* ToastSwiftFramework.framework */; };
+		E7F72EAA225F50DC005808AA /* IQKeyboardManagerSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E7F72E76225E8187005808AA /* IQKeyboardManagerSwift.framework */; };
+		E7F72EAB225F50DC005808AA /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E7F72E70225E8159005808AA /* Alamofire.framework */; };
+		E7F72EAC225F50DC005808AA /* QXSwiftKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E7F72E67225E800A005808AA /* QXSwiftKit.framework */; };
+		E7F72EAE225F55E1005808AA /* HomeViewProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7F72EAD225F55E1005808AA /* HomeViewProtocols.swift */; };
+		E7F72EB0225F5608005808AA /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7F72EAF225F5608005808AA /* HomeViewModel.swift */; };
+		E7F72EB2225F5885005808AA /* HomeViewDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7F72EB1225F5885005808AA /* HomeViewDataProvider.swift */; };
+		E7F72EB4225F69D9005808AA /* LocalizedStrings.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7F72EB3225F69D9005808AA /* LocalizedStrings.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,7 +70,13 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
+				E7F72E96225F455C005808AA /* SKPhotoBrowser.framework in Embed Frameworks */,
+				E7F72E92225F4526005808AA /* SDWebImage.framework in Embed Frameworks */,
+				E7F72E94225F453C005808AA /* ToastSwiftFramework.framework in Embed Frameworks */,
 				E7F72E6C225E802F005808AA /* QXSwiftKit.framework in Embed Frameworks */,
+				E7F72E9C225F455C005808AA /* Alamofire.framework in Embed Frameworks */,
+				E7F72E9A225F455C005808AA /* IQKeyboardManagerSwift.framework in Embed Frameworks */,
+				E7F72E98225F455C005808AA /* SnapKit.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -81,7 +101,7 @@
 		E7F72DF7225E4816005808AA /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		E7F72DFA225E70F8005808AA /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 		E7F72E67225E800A005808AA /* QXSwiftKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = QXSwiftKit.framework; sourceTree = "<group>"; };
-		E7F72E6E225E80A6005808AA /* UIConstantsswift.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIConstantsswift.swift; sourceTree = "<group>"; };
+		E7F72E6E225E80A6005808AA /* UIConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIConstants.swift; sourceTree = "<group>"; };
 		E7F72E70225E8159005808AA /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = Carthage/Build/iOS/Alamofire.framework; sourceTree = SOURCE_ROOT; };
 		E7F72E76225E8187005808AA /* IQKeyboardManagerSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = IQKeyboardManagerSwift.framework; path = Carthage/Build/iOS/IQKeyboardManagerSwift.framework; sourceTree = SOURCE_ROOT; };
 		E7F72E78225E819B005808AA /* SKPhotoBrowser.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SKPhotoBrowser.framework; path = Carthage/Build/iOS/SKPhotoBrowser.framework; sourceTree = SOURCE_ROOT; };
@@ -93,6 +113,15 @@
 		E7F72E85225E84FF005808AA /* FlickrSearchApiResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlickrSearchApiResponseModel.swift; sourceTree = "<group>"; };
 		E7F72E87225E85F6005808AA /* FlickSearchResponseCacher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlickSearchResponseCacher.swift; sourceTree = "<group>"; };
 		E7F72E89225E8D34005808AA /* StringMask.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringMask.swift; sourceTree = "<group>"; };
+		E7F72E8D225F43AB005808AA /* FlickrSearchApiServiceTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlickrSearchApiServiceTest.swift; sourceTree = "<group>"; };
+		E7F72E8F225F43C2005808AA /* StringMaskTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringMaskTest.swift; sourceTree = "<group>"; };
+		E7F72EA0225F46DA005808AA /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		E7F72EA2225F46DB005808AA /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Localizable.strings"; sourceTree = "<group>"; };
+		E7F72EA3225F48CD005808AA /* IndicatorButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IndicatorButton.swift; sourceTree = "<group>"; };
+		E7F72EAD225F55E1005808AA /* HomeViewProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewProtocols.swift; sourceTree = "<group>"; };
+		E7F72EAF225F5608005808AA /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
+		E7F72EB1225F5885005808AA /* HomeViewDataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewDataProvider.swift; sourceTree = "<group>"; };
+		E7F72EB3225F69D9005808AA /* LocalizedStrings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalizedStrings.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,13 +129,13 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E7F72E7F225E819B005808AA /* SDWebImage.framework in Frameworks */,
-				E7F72E6B225E802F005808AA /* QXSwiftKit.framework in Frameworks */,
-				E7F72E7E225E819B005808AA /* ToastSwiftFramework.framework in Frameworks */,
-				E7F72E72225E8165005808AA /* Alamofire.framework in Frameworks */,
-				E7F72E7C225E819B005808AA /* SKPhotoBrowser.framework in Frameworks */,
-				E7F72E7D225E819B005808AA /* SnapKit.framework in Frameworks */,
-				E7F72E77225E8187005808AA /* IQKeyboardManagerSwift.framework in Frameworks */,
+				E7F72EA6225F50DC005808AA /* SDWebImage.framework in Frameworks */,
+				E7F72EA7225F50DC005808AA /* SKPhotoBrowser.framework in Frameworks */,
+				E7F72EA8225F50DC005808AA /* SnapKit.framework in Frameworks */,
+				E7F72EA9225F50DC005808AA /* ToastSwiftFramework.framework in Frameworks */,
+				E7F72EAA225F50DC005808AA /* IQKeyboardManagerSwift.framework in Frameworks */,
+				E7F72EAB225F50DC005808AA /* Alamofire.framework in Frameworks */,
+				E7F72EAC225F50DC005808AA /* QXSwiftKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -135,6 +164,7 @@
 				E721F9B5225E36D9005B39A0 /* PicSearcherTests */,
 				E721F9C0225E36D9005B39A0 /* PicSearcherUITests */,
 				E721F99F225E36D8005B39A0 /* Products */,
+				E7F72EA5225F50DC005808AA /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -166,6 +196,8 @@
 		E721F9B5225E36D9005B39A0 /* PicSearcherTests */ = {
 			isa = PBXGroup;
 			children = (
+				E7F72E8C225F4358005808AA /* Api */,
+				E7F72E8B225F4347005808AA /* Common */,
 				E721F9B6225E36D9005B39A0 /* PicSearcherTests.swift */,
 				E721F9B8225E36D9005B39A0 /* Info.plist */,
 			);
@@ -194,6 +226,7 @@
 			children = (
 				E721F9A1225E36D8005B39A0 /* AppDelegate.swift */,
 				E721F9AA225E36D9005B39A0 /* LaunchScreen.storyboard */,
+				E7F72EA1225F46DA005808AA /* Localizable.strings */,
 			);
 			path = Application;
 			sourceTree = "<group>";
@@ -203,7 +236,7 @@
 			children = (
 				E7F72DF6225E4807005808AA /* Home */,
 				E7F72DFA225E70F8005808AA /* Colors.swift */,
-				E7F72E6E225E80A6005808AA /* UIConstantsswift.swift */,
+				E7F72E6E225E80A6005808AA /* UIConstants.swift */,
 			);
 			path = Frontend;
 			sourceTree = "<group>";
@@ -212,6 +245,9 @@
 			isa = PBXGroup;
 			children = (
 				E7F72DF7225E4816005808AA /* HomeViewController.swift */,
+				E7F72EAD225F55E1005808AA /* HomeViewProtocols.swift */,
+				E7F72EAF225F5608005808AA /* HomeViewModel.swift */,
+				E7F72EB1225F5885005808AA /* HomeViewDataProvider.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -221,6 +257,8 @@
 			children = (
 				E7F72E80225E837B005808AA /* NetworkMonitor.swift */,
 				E7F72E89225E8D34005808AA /* StringMask.swift */,
+				E7F72EA3225F48CD005808AA /* IndicatorButton.swift */,
+				E7F72EB3225F69D9005808AA /* LocalizedStrings.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -247,6 +285,29 @@
 				E7F72E87225E85F6005808AA /* FlickSearchResponseCacher.swift */,
 			);
 			path = Api;
+			sourceTree = "<group>";
+		};
+		E7F72E8B225F4347005808AA /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				E7F72E8F225F43C2005808AA /* StringMaskTest.swift */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		E7F72E8C225F4358005808AA /* Api */ = {
+			isa = PBXGroup;
+			children = (
+				E7F72E8D225F43AB005808AA /* FlickrSearchApiServiceTest.swift */,
+			);
+			path = Api;
+			sourceTree = "<group>";
+		};
+		E7F72EA5225F50DC005808AA /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -356,6 +417,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E7F72E9F225F46DA005808AA /* Localizable.strings in Resources */,
 				E721F9AC225E36D9005B39A0 /* LaunchScreen.storyboard in Resources */,
 				E7F72DF0225E4766005808AA /* InfoPlist.strings in Resources */,
 				E721F9A9225E36D9005B39A0 /* Assets.xcassets in Resources */,
@@ -406,11 +468,16 @@
 			files = (
 				E721F9A2225E36D8005B39A0 /* AppDelegate.swift in Sources */,
 				E7F72E8A225E8D34005808AA /* StringMask.swift in Sources */,
-				E7F72E6F225E80A6005808AA /* UIConstantsswift.swift in Sources */,
+				E7F72E6F225E80A6005808AA /* UIConstants.swift in Sources */,
 				E7F72E81225E837B005808AA /* NetworkMonitor.swift in Sources */,
+				E7F72EB4225F69D9005808AA /* LocalizedStrings.swift in Sources */,
+				E7F72EAE225F55E1005808AA /* HomeViewProtocols.swift in Sources */,
 				E7F72E86225E84FF005808AA /* FlickrSearchApiResponseModel.swift in Sources */,
 				E7F72DFB225E70F8005808AA /* Colors.swift in Sources */,
+				E7F72EB0225F5608005808AA /* HomeViewModel.swift in Sources */,
 				E7F72DF8225E4816005808AA /* HomeViewController.swift in Sources */,
+				E7F72EA4225F48CD005808AA /* IndicatorButton.swift in Sources */,
+				E7F72EB2225F5885005808AA /* HomeViewDataProvider.swift in Sources */,
 				E7F72E88225E85F6005808AA /* FlickSearchResponseCacher.swift in Sources */,
 				E7F72E84225E843B005808AA /* FlickrSearchApiService.swift in Sources */,
 			);
@@ -420,6 +487,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E7F72E90225F43C2005808AA /* StringMaskTest.swift in Sources */,
+				E7F72E8E225F43AB005808AA /* FlickrSearchApiServiceTest.swift in Sources */,
 				E721F9B7225E36D9005B39A0 /* PicSearcherTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -463,6 +532,15 @@
 				E7F72DF4225E47C5005808AA /* zh-Hans */,
 			);
 			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		E7F72EA1225F46DA005808AA /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E7F72EA0225F46DA005808AA /* en */,
+				E7F72EA2225F46DB005808AA /* zh-Hans */,
+			);
+			name = Localizable.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */

@@ -1,0 +1,9 @@
+/* 
+  Localizable.strings
+  PicSearcher
+
+  Created by 尹啟星 on 2019/4/11.
+  Copyright © 2019 xingxing. All rights reserved.
+*/
+HomeView.SearchPlaceholder = "搜索关键字";
+HomeView.KeyWordHasNoPics = "没有找到相关的图片，试试其他关键字";
