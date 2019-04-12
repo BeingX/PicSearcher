@@ -15,7 +15,30 @@ extension FileManager {
         case Byte
         case KB
     }
-    func cachesDirectoryFileSize(atPath path: String, unit: SizeUnitType = .MB) -> String {
+    func cachesDirectoryFileSize(unit: SizeUnitType = .MB) -> String {
+        var totalSize = "0.00"
+        if let path = cachesDirectoryPath() {
+            totalSize = fileSize(atPath: path, unit: unit)
+        }
+        return totalSize
+    }
+
+    func clearCachesDirectory() {
+        if let path = cachesDirectoryPath() {
+            do {
+                try FileManager.default.removeItem(atPath: path)
+                debugPrint("clear path:" + path )
+            } catch {
+                debugPrint(error)
+            }
+        }
+    }
+    func cachesDirectoryPath() -> String? {
+        let documentPaths = NSSearchPathForDirectoriesInDomains(FileManager.SearchPathDirectory.cachesDirectory, FileManager.SearchPathDomainMask.userDomainMask, true)
+        let dir = documentPaths.first
+        return dir
+    }
+    func fileSize(atPath path: String, unit: SizeUnitType = .MB) -> String {
         let fileUrl = URL(fileURLWithPath: path)
         var totalSize: Double = 0.0
         if let size = try? FileManager.default.allocatedSizeOfDirectory(at: fileUrl) {
@@ -32,16 +55,7 @@ extension FileManager {
         let doubleStr = String(format: "%.2f %@", totalSize, unit.rawValue)
         return doubleStr
     }
-    func clearCachesDirectory() {
-        let documentPaths = NSSearchPathForDirectoriesInDomains(FileManager.SearchPathDirectory.cachesDirectory, FileManager.SearchPathDomainMask.userDomainMask, true)
-        let dir = documentPaths.first!
-        do {
-            try FileManager.default.removeItem(atPath: dir)
-            debugPrint("clear path:" + dir )
-        } catch {
-            debugPrint(error)
-        }
-    }
+    
 }
 public extension UIScreen {
     public static var width: CGFloat {

@@ -26,5 +26,6 @@ struct LocalizedStrings {
         static let SendFeedback = NSLocalizedString("Settings.SendFeedback", comment: "")
         static let PrivacyUrlString = NSLocalizedString("PrivacyUrl", comment: "")
         static let NoEmailServiceToast = NSLocalizedString("Settings.NoEmailServiceToast", comment: "")
+        static let ClearChche = NSLocalizedString("Settings.ClearChche", comment: "")
     }
 }

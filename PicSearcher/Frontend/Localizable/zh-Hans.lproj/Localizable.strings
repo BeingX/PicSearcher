@@ -15,6 +15,7 @@ Settings.PrivacyTitle = "隐私";
 Settings.PrivacyPolicy = "隐私政策";
 Settings.SupportTitle = "技术支持";
 Settings.ShowTour = "显示导览";
+Settings.ClearChche = "清理缓存";
 Settings.SendFeedback = "发送反馈";
 Settings.NoEmailServiceToast = "iPhone 还没有配置邮箱账户";
 PrivacyUrl = "https://www.freeprivacypolicy.com/privacy/view/30c2b6479fd203ab8368dfac0d0e2f50";

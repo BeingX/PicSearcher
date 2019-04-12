@@ -51,15 +51,6 @@ class HomeViewController: UIViewController {
         view.backgroundColor = HomeViewUX.BackgroundColor
         goButton.addTarget(self, action: #selector(goQuery), for: .touchUpInside)
         setMenuButton()
-        let documentPaths = NSSearchPathForDirectoriesInDomains(FileManager.SearchPathDirectory.cachesDirectory, FileManager.SearchPathDomainMask.userDomainMask, true)
-        let dir = documentPaths.first!
-//        
-//        let attr = try? FileManager.default.attributesOfItem(atPath: dir)
-//        let dd = try? FileManager.default.allocatedSizeOfDirectory(at: URL(fileURLWithPath: dir))
-        debugPrint(FileManager.default.cachesDirectoryFileSize(atPath: dir))
-        FileManager.default.clearCachesDirectory()
-        debugPrint(FileManager.default.cachesDirectoryFileSize(atPath: dir))
-        
     }
     func addSubview() {
         view.addSubview(goButton)

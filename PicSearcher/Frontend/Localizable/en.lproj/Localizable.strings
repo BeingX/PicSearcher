@@ -15,6 +15,7 @@ Settings.PrivacyTitle = "PRIVACY";
 Settings.PrivacyPolicy = "Privacy Policy";
 Settings.SupportTitle = "SUPPORT";
 Settings.ShowTour = "Show Tour";
+Settings.ClearChche = "Clear Chche";
 Settings.SendFeedback = "Send Feedback";
 Settings.NoEmailServiceToast = "There is no email account on this phone";
 PrivacyUrl = "https://www.freeprivacypolicy.com/privacy/view/30c2b6479fd203ab8368dfac0d0e2f50";

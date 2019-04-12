@@ -12,7 +12,9 @@ import ToastSwiftFramework
 public struct SettingsItem {
     public fileprivate(set) var title: String
     public fileprivate(set) var text: String?
+    public fileprivate(set) var detailText: String?
     public fileprivate(set) var iconString: String?
+    public fileprivate(set) var accessoryType: UITableViewCell.AccessoryType = .none
     public fileprivate(set) var handler: ((SettingsItem) -> Void)?
 }
 
@@ -27,6 +29,7 @@ struct SettingsStrings {
     static let SendFeedback = LocalizedStrings.SettingsView.SendFeedback
     static let PrivacyUrlString = LocalizedStrings.SettingsView.PrivacyUrlString
     static let NoEmailServiceToast = LocalizedStrings.SettingsView.NoEmailServiceToast
+    static let ClearCache = LocalizedStrings.SettingsView.ClearChche
 }
 
 class SettingsViewController: UIViewController {
@@ -49,11 +52,11 @@ class SettingsViewController: UIViewController {
         tableView.snp.makeConstraints { (maker) in
             maker.edges.equalToSuperview()
         }
-        self.dataToShow()
+        self.updateSettingsItems()
     }
     
-    func dataToShow() {
-        let privacyPolicyItem = SettingsItem(title: SettingsStrings.PrivacyTitle, text: SettingsStrings.PrivacyPolicy, iconString: "privacy", handler: {[weak self] item in
+    func updateSettingsItems() {
+        let privacyPolicyItem = SettingsItem(title: SettingsStrings.PrivacyTitle, text: SettingsStrings.PrivacyPolicy, detailText: nil, iconString: "privacy", accessoryType: .disclosureIndicator, handler: {[weak self] item in
             if let languageCode = Locale.current.languageCode, languageCode.contains("zh"),
                 let url = Bundle.main.url(forResource: "privacy_zh", withExtension: "html"),
                 let html = try? String(contentsOf: url) {
@@ -65,15 +68,21 @@ class SettingsViewController: UIViewController {
             }
             
         })
-        let showTourItem = SettingsItem(title: SettingsStrings.SupportTitle, text: SettingsStrings.ShowTour, iconString: "showtour", handler: { item in
+        let showTourItem = SettingsItem(title: SettingsStrings.SupportTitle, text: SettingsStrings.ShowTour, detailText: nil, iconString: "showtour", accessoryType: .none, handler: { item in
             
         })
-        let feedbackItem = SettingsItem(title: SettingsStrings.SupportTitle, text: SettingsStrings.SendFeedback, iconString: "feedback", handler: {[weak self] item in
+        let feedbackItem = SettingsItem(title: SettingsStrings.SupportTitle, text: SettingsStrings.SendFeedback, detailText: nil, iconString: "feedback", accessoryType: .none, handler: {[weak self] item in
             self?.sendEmail()
+        })
+        let cacheDirSize = FileManager.default.cachesDirectoryFileSize()
+        let clearCacheItem = SettingsItem(title: SettingsStrings.SupportTitle, text: SettingsStrings.ClearCache, detailText: cacheDirSize, iconString: "clearCache", accessoryType: .none, handler: {[weak self] item in
+            FileManager.default.clearCachesDirectory()
+            self?.updateSettingsItems()
         })
         groups.removeAll()
         groups.append([privacyPolicyItem])
-        groups.append([showTourItem, feedbackItem])
+        groups.append([showTourItem, feedbackItem, clearCacheItem])
+        tableView.reloadData()
     }
     func sendEmail() {
         if MFMailComposeViewController.canSendMail() {
@@ -123,6 +132,8 @@ extension SettingsViewController: UITableViewDelegate, UITableViewDataSource {
         if let icon = item.iconString {
             cell?.imageView?.image = UIImage(named: icon)
         }
+        cell?.detailTextLabel?.text = item.detailText
+        cell?.accessoryType = item.accessoryType
         return cell!
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
