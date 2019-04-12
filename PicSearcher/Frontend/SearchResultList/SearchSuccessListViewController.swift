@@ -12,9 +12,9 @@ import SKPhotoBrowser
 import ToastSwiftFramework
 
 struct SearchSuccessListViewUX {
-    static let CollectionBackgroundColor = UIConstants.systemColor
-    static let CollectionInteritemSpacing: CGFloat = 10
-    static let CollectionLineSpacing: CGFloat = 10
+    static let CollectionBackgroundColor = UIColor.White100
+    static let CollectionInteritemSpacing: CGFloat = 5
+    static let CollectionLineSpacing: CGFloat = 5
     static let CollectionCol: CGFloat = 3
     static let CollectionItemWidth: CGFloat = floor((UIScreen.width - (CollectionCol-1)*CollectionInteritemSpacing)/3)
     static let CollectionItemHeight: CGFloat = CollectionItemWidth * 1.3
@@ -40,8 +40,10 @@ class SearchSuccessListViewController: UIViewController {
         layout.sectionInset = SearchSuccessListViewUX.collectionInsets
         let view = UICollectionView(frame: .zero, collectionViewLayout: layout)
         view.dataSource = self
+        view.delegate = self
         view.mj_footer = footer
         view.backgroundColor = SearchSuccessListViewUX.CollectionBackgroundColor
+        view.register(PhotoCollectionViewCell.self, forCellWithReuseIdentifier: SearchSuccessListViewUX.CollectionCellName)
         return view
     }()
     lazy var photoCountIndicatorLabel: UILabel = {
@@ -65,7 +67,6 @@ class SearchSuccessListViewController: UIViewController {
         collectionView.snp.makeConstraints { (maker) in
             maker.edges.equalTo(self.view.safeAreaLayoutGuide)
         }
-        configCollectinView()
         footer.setRefreshingTarget(self, refreshingAction: #selector(footerRefresh))
         let item = UIBarButtonItem(customView: photoCountIndicatorLabel)
         navigationItem.rightBarButtonItem = item
@@ -73,22 +74,38 @@ class SearchSuccessListViewController: UIViewController {
     @objc func footerRefresh() {
         dataProvider?.requestNextPage()
     }
-    func configCollectinView() {
-        self.collectionView.register(PhotoCollectionViewCell.self, forCellWithReuseIdentifier: SearchSuccessListViewUX.CollectionCellName)
+    func browsePicsFullScreen(beginIndex: Int) {
+        let images: [SKPhoto] = viewModel.photos.map { (photo) -> SKPhoto in
+            let skPhoto = SKPhoto.photoWithImageURL(photo.imageUrl!)
+            skPhoto.shouldCachePhotoURLImage = true
+            return skPhoto
+        }
+        let browser = SKPhotoBrowser(photos: images)
+        browser.initializePageIndex(beginIndex)
+        present(browser, animated: true, completion: {})
     }
 }
 
-extension SearchSuccessListViewController: UICollectionViewDataSource {
+extension SearchSuccessListViewController: UICollectionViewDataSource, UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return viewModel.photos.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell: PhotoCollectionViewCell = collectionView.dequeueReusableCell(withReuseIdentifier: SearchSuccessListViewUX.CollectionCellName, for: indexPath) as! PhotoCollectionViewCell
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: SearchSuccessListViewUX.CollectionCellName, for: indexPath)
         let photo = viewModel.photos[indexPath.item]
-        cell.photo = photo
+        if let photoCell: PhotoCollectionViewCell =  cell as? PhotoCollectionViewCell {
+            photoCell.photo = photo
+        }
+        
         return cell
     }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        collectionView.deselectItem(at: indexPath, animated: true)
+        browsePicsFullScreen(beginIndex: indexPath.item)
+    }
+    
 }
 extension SearchSuccessListViewController: SuccessListViewInputProtocol {
     func noMorePhotos() {
@@ -102,6 +119,6 @@ extension SearchSuccessListViewController: SuccessListViewInputProtocol {
     
     func updateErrorInfo(errorDescription: String) {
         collectionView.mj_footer.endRefreshing()
-        self.view.makeToast(errorDescription)
+        view.makeToast(errorDescription, duration: 3.0, position: .center)
     }
 }

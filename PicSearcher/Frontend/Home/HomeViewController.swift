@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import ToastSwiftFramework
 
 struct HomeViewUX {
     static let BackgroundColor = UIConstants.systemColor
@@ -85,6 +86,7 @@ extension HomeViewController: HomeViewInputProtocol {
     }
     
     func updateErrorInfo(errorDescription: String) {
+        self.view.makeToast(errorDescription, duration: 3.0, position: .center)
     }
 }
 
