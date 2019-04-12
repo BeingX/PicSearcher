@@ -8,6 +8,7 @@
 import UIKit
 import MessageUI
 import ToastSwiftFramework
+import PKHUD
 
 public struct SettingsItem {
     public fileprivate(set) var title: String
@@ -78,6 +79,7 @@ class SettingsViewController: UIViewController {
         let clearCacheItem = SettingsItem(title: SettingsStrings.SupportTitle, text: SettingsStrings.ClearCache, detailText: cacheDirSize, iconString: "clearCache", accessoryType: .none, handler: {[weak self] item in
             FileManager.default.clearCachesDirectory()
             self?.updateSettingsItems()
+            HUD.flash(.success, delay: 1.0)
         })
         groups.removeAll()
         groups.append([privacyPolicyItem])

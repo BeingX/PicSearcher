@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		E718BA6B2260C37700D8F7DC /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E718BA6A2260C37700D8F7DC /* SettingsViewController.swift */; };
 		E718BA6D2260CA3B00D8F7DC /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E718BA6C2260CA3B00D8F7DC /* WebViewController.swift */; };
+		E718BA732260EE3E00D8F7DC /* PKHUD.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E718BA722260EE3E00D8F7DC /* PKHUD.framework */; };
+		E718BA742260EE9F00D8F7DC /* PKHUD.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E718BA722260EE3E00D8F7DC /* PKHUD.framework */; };
+		E718BA752260EE9F00D8F7DC /* PKHUD.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = E718BA722260EE3E00D8F7DC /* PKHUD.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		E721F9A2225E36D8005B39A0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E721F9A1225E36D8005B39A0 /* AppDelegate.swift */; };
 		E721F9A9225E36D9005B39A0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E721F9A8225E36D9005B39A0 /* Assets.xcassets */; };
 		E721F9AC225E36D9005B39A0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E721F9AA225E36D9005B39A0 /* LaunchScreen.storyboard */; };
@@ -81,6 +84,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
+				E718BA752260EE9F00D8F7DC /* PKHUD.framework in Embed Frameworks */,
 				E7F72E96225F455C005808AA /* SKPhotoBrowser.framework in Embed Frameworks */,
 				E7F72E92225F4526005808AA /* SDWebImage.framework in Embed Frameworks */,
 				E7F72E94225F453C005808AA /* ToastSwiftFramework.framework in Embed Frameworks */,
@@ -98,6 +102,7 @@
 /* Begin PBXFileReference section */
 		E718BA6A2260C37700D8F7DC /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		E718BA6C2260CA3B00D8F7DC /* WebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
+		E718BA722260EE3E00D8F7DC /* PKHUD.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = PKHUD.framework; path = Carthage/Build/iOS/PKHUD.framework; sourceTree = SOURCE_ROOT; };
 		E721F99E225E36D8005B39A0 /* PicSearcher.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PicSearcher.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E721F9A1225E36D8005B39A0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E721F9A8225E36D9005B39A0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -151,6 +156,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E7F72EA6225F50DC005808AA /* SDWebImage.framework in Frameworks */,
+				E718BA732260EE3E00D8F7DC /* PKHUD.framework in Frameworks */,
 				E7F72EC4225FE81C005808AA /* MJRefresh.framework in Frameworks */,
 				E7F72EA7225F50DC005808AA /* SKPhotoBrowser.framework in Frameworks */,
 				E7F72EA8225F50DC005808AA /* SnapKit.framework in Frameworks */,
@@ -158,6 +164,7 @@
 				E7F72EAA225F50DC005808AA /* IQKeyboardManagerSwift.framework in Frameworks */,
 				E7F72EBF225FDDA3005808AA /* MJRefresh.framework in Frameworks */,
 				E7F72EAB225F50DC005808AA /* Alamofire.framework in Frameworks */,
+				E718BA742260EE9F00D8F7DC /* PKHUD.framework in Frameworks */,
 				E7F72EAC225F50DC005808AA /* QXSwiftKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -309,6 +316,7 @@
 		E7F72DFC225E724F005808AA /* ThirdLib */ = {
 			isa = PBXGroup;
 			children = (
+				E718BA722260EE3E00D8F7DC /* PKHUD.framework */,
 				E7F72EBE225FDDA3005808AA /* MJRefresh.framework */,
 				E7F72E7B225E819B005808AA /* SDWebImage.framework */,
 				E7F72E78225E819B005808AA /* SKPhotoBrowser.framework */,
