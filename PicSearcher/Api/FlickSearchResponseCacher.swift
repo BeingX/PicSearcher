@@ -75,6 +75,8 @@ class FlickSearchResponseCacher<T: Codable> {
     
     func cacheDir() -> String {
         let documentPaths = NSSearchPathForDirectoriesInDomains(FileManager.SearchPathDirectory.cachesDirectory, FileManager.SearchPathDomainMask.userDomainMask, true)
-        return documentPaths.first! + "/cache"
+        let dir = documentPaths.first! + "/cache"
+        debugPrint(dir)
+        return dir
     }
 }

@@ -1,0 +1,20 @@
+/* 
+  Localizable.strings
+  PicSearcher
+
+  Created by 尹啟星 on 2019/4/11.
+  Copyright © 2019 xingxing. All rights reserved.
+*/
+HomeView.SearchPlaceholder = "search key word";
+HomeView.KeyWordHasNoPics = "search tag has no picture, please try other tag";
+HomeView.Title = "Home Page";
+
+Settings.Title = "Settings";
+DoneButtonTitle = "Done";
+Settings.PrivacyTitle = "PRIVACY";
+Settings.PrivacyPolicy = "Privacy Policy";
+Settings.SupportTitle = "SUPPORT";
+Settings.ShowTour = "Show Tour";
+Settings.SendFeedback = "Send Feedback";
+Settings.NoEmailServiceToast = "There is no email account on this phone";
+PrivacyUrl = "https://www.freeprivacypolicy.com/privacy/view/30c2b6479fd203ab8368dfac0d0e2f50";

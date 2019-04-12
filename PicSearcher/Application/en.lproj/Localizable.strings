@@ -1,9 +1,0 @@
-/* 
-  Localizable.strings
-  PicSearcher
-
-  Created by 尹啟星 on 2019/4/11.
-  Copyright © 2019 xingxing. All rights reserved.
-*/
-HomeView.SearchPlaceholder = "search key word";
-HomeView.KeyWordHasNoPics = "search tag has no picture, please try other tag";

@@ -9,6 +9,10 @@
 import UIKit
 import ToastSwiftFramework
 
+struct HomeViewStrings {
+    static let InputPlaceholder = LocalizedStrings.HomeView.SearchPlaceholder
+    static let Title = LocalizedStrings.HomeView.Title
+}
 struct HomeViewUX {
     static let BackgroundColor = UIConstants.systemColor
     static let SearchViewTop: CGFloat = 120
@@ -26,7 +30,7 @@ class HomeViewController: UIViewController {
         let bar = UISearchBar()
         bar.returnKeyType = .search
         bar.backgroundImage = UIImage()
-        bar.placeholder = LocalizedStrings.HomeView.SearchPlaceholder
+        bar.placeholder = HomeViewStrings.InputPlaceholder
         return bar
     }()
     lazy var goButton: IndicatorButton = {
@@ -40,11 +44,22 @@ class HomeViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        navigationItem.title = HomeViewStrings.Title
         addSubview()
         searchBar.delegate = self
         dataProvider = HomeViewDataProvider(view: self)
         view.backgroundColor = HomeViewUX.BackgroundColor
         goButton.addTarget(self, action: #selector(goQuery), for: .touchUpInside)
+        setMenuButton()
+        let documentPaths = NSSearchPathForDirectoriesInDomains(FileManager.SearchPathDirectory.cachesDirectory, FileManager.SearchPathDomainMask.userDomainMask, true)
+        let dir = documentPaths.first!
+//        
+//        let attr = try? FileManager.default.attributesOfItem(atPath: dir)
+//        let dd = try? FileManager.default.allocatedSizeOfDirectory(at: URL(fileURLWithPath: dir))
+        debugPrint(FileManager.default.cachesDirectoryFileSize(atPath: dir))
+        FileManager.default.clearCachesDirectory()
+        debugPrint(FileManager.default.cachesDirectoryFileSize(atPath: dir))
+        
     }
     func addSubview() {
         view.addSubview(goButton)
@@ -63,6 +78,17 @@ class HomeViewController: UIViewController {
         }
     }
     
+    func setMenuButton() {
+        let button = UIButton(type: .custom)
+        button.addTarget(self, action: #selector(showMenu), for: .touchUpInside)
+        let image = UIImage(named: "nav_menu")
+        button.setImage(image, for: .normal)
+        let barButtonItem = UIBarButtonItem(customView: button)
+        self.navigationItem.rightBarButtonItem = barButtonItem
+    }
+    @objc func showMenu() {
+        self.present(UINavigationController(rootViewController: SettingsViewController()), animated: true, completion: nil)
+    }
     @objc func goQuery() {
         self.view.endEditing(true)
         guard let text = searchBar.text?.trim(), !text.isEmpty else {

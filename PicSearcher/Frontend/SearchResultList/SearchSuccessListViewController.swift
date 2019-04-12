@@ -71,6 +71,15 @@ class SearchSuccessListViewController: UIViewController {
         let item = UIBarButtonItem(customView: photoCountIndicatorLabel)
         navigationItem.rightBarButtonItem = item
     }
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+
+        if collectionView.contentSize.height <= collectionView.frame.size.height {
+            collectionView.mj_footer = nil
+        } else {
+            collectionView.mj_footer = footer
+        }
+    }
     @objc func footerRefresh() {
         dataProvider?.requestNextPage()
     }

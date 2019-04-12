@@ -9,11 +9,14 @@
 import UIKit
 import SDWebImage
 
+struct PhotoCollectionViewCellUX {
+    static let ImageViwePlaceHolder = "imageViewPlaceholder"
+}
 class PhotoCollectionViewCell: UICollectionViewCell {
     var photo: FlickrSearchApiResponseModel.Photos.PhotoModel? {
         didSet {
             if let urlStr = photo?.imageThumbUrl, let url = URL(string: urlStr) {
-                imageView.sd_setImage(with: url, placeholderImage: UIImage(named: "placeHolder"))
+                imageView.sd_setImage(with: url, placeholderImage: UIImage(named: PhotoCollectionViewCellUX.ImageViwePlaceHolder))
             }
         }
     }

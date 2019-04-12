@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E718BA6B2260C37700D8F7DC /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E718BA6A2260C37700D8F7DC /* SettingsViewController.swift */; };
+		E718BA6D2260CA3B00D8F7DC /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E718BA6C2260CA3B00D8F7DC /* WebViewController.swift */; };
 		E721F9A2225E36D8005B39A0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E721F9A1225E36D8005B39A0 /* AppDelegate.swift */; };
 		E721F9A9225E36D9005B39A0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E721F9A8225E36D9005B39A0 /* Assets.xcassets */; };
 		E721F9AC225E36D9005B39A0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E721F9AA225E36D9005B39A0 /* LaunchScreen.storyboard */; };
@@ -94,6 +96,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		E718BA6A2260C37700D8F7DC /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		E718BA6C2260CA3B00D8F7DC /* WebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
 		E721F99E225E36D8005B39A0 /* PicSearcher.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PicSearcher.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E721F9A1225E36D8005B39A0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E721F9A8225E36D9005B39A0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -175,6 +179,24 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		E718BA692260C35500D8F7DC /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				E718BA6A2260C37700D8F7DC /* SettingsViewController.swift */,
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
+		E718BA6E2260CE7600D8F7DC /* Localizable */ = {
+			isa = PBXGroup;
+			children = (
+				E7F72EB3225F69D9005808AA /* LocalizedStrings.swift */,
+				E7F72EA1225F46DA005808AA /* Localizable.strings */,
+				E7F72DF2225E4766005808AA /* InfoPlist.strings */,
+			);
+			path = Localizable;
+			sourceTree = "<group>";
+		};
 		E721F995225E36D8005B39A0 = {
 			isa = PBXGroup;
 			children = (
@@ -200,14 +222,13 @@
 		E721F9A0225E36D8005B39A0 /* PicSearcher */ = {
 			isa = PBXGroup;
 			children = (
-				E7F72E82225E83FB005808AA /* Api */,
 				E7F72DFC225E724F005808AA /* ThirdLib */,
+				E7F72E82225E83FB005808AA /* Api */,
 				E7F72DF9225E6CB0005808AA /* Common */,
 				E7F72DEA225E4378005808AA /* Frontend */,
 				E7F72DE9225E435C005808AA /* Application */,
 				E7F72DE8225E4349005808AA /* Assets */,
 				E721F9AD225E36D9005B39A0 /* Info.plist */,
-				E7F72DF2225E4766005808AA /* InfoPlist.strings */,
 			);
 			path = PicSearcher;
 			sourceTree = "<group>";
@@ -245,7 +266,6 @@
 			children = (
 				E721F9A1225E36D8005B39A0 /* AppDelegate.swift */,
 				E721F9AA225E36D9005B39A0 /* LaunchScreen.storyboard */,
-				E7F72EA1225F46DA005808AA /* Localizable.strings */,
 			);
 			path = Application;
 			sourceTree = "<group>";
@@ -253,6 +273,8 @@
 		E7F72DEA225E4378005808AA /* Frontend */ = {
 			isa = PBXGroup;
 			children = (
+				E718BA6E2260CE7600D8F7DC /* Localizable */,
+				E718BA692260C35500D8F7DC /* Settings */,
 				E7F72EB5225F945C005808AA /* SearchResultList */,
 				E7F72DF6225E4807005808AA /* Home */,
 				E7F72DFA225E70F8005808AA /* Colors.swift */,
@@ -278,8 +300,8 @@
 				E7F72E80225E837B005808AA /* NetworkMonitor.swift */,
 				E7F72E89225E8D34005808AA /* StringMask.swift */,
 				E7F72EA3225F48CD005808AA /* IndicatorButton.swift */,
-				E7F72EB3225F69D9005808AA /* LocalizedStrings.swift */,
 				E7F72EC0225FE0DA005808AA /* Extensions.swift */,
+				E718BA6C2260CA3B00D8F7DC /* WebViewController.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -501,7 +523,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				E721F9A2225E36D8005B39A0 /* AppDelegate.swift in Sources */,
+				E718BA6D2260CA3B00D8F7DC /* WebViewController.swift in Sources */,
 				E7F72EC3225FE29D005808AA /* PhotoCollectionViewCell.swift in Sources */,
+				E718BA6B2260C37700D8F7DC /* SettingsViewController.swift in Sources */,
 				E7F72E8A225E8D34005808AA /* StringMask.swift in Sources */,
 				E7F72E6F225E80A6005808AA /* UIConstants.swift in Sources */,
 				E7F72E81225E837B005808AA /* NetworkMonitor.swift in Sources */,
