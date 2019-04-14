@@ -22,7 +22,7 @@ public struct SettingsItem {
 struct SettingsStrings {
     static let Title = LocalizedStrings.SettingsView.Title
     static let DoneButtonTitle = LocalizedStrings.DoneButtonTitle
-    static let CellName = "UITableViewCell"
+    static let CellName = "SettingsViewController.UITableViewCell"
     static let PrivacyTitle = LocalizedStrings.SettingsView.PrivacyTitle
     static let PrivacyPolicy = LocalizedStrings.SettingsView.PrivacyPolicy
     static let SupportTitle = LocalizedStrings.SettingsView.SupportTitle

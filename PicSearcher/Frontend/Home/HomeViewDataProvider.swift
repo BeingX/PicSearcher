@@ -51,6 +51,7 @@ class HomeViewDataProvider: NSObject {
     func handleResponseModel(searchText: String, responseModel: FlickrSearchApiResponseModel?) {
         if let response = responseModel, let firstPage = response.photos, firstPage.photo.count > 0 {
             view?.pushSuccessView(searchText: searchText, firstPage: firstPage)
+            SearchRecordManager.shared.saveRecord(searchKeyWord: searchText, firstPage: firstPage)
         } else {
             outputErrorString(error: LocalizedStrings.HomeView.TagHasNoPics)
         }

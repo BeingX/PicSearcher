@@ -12,6 +12,9 @@
 		E718BA732260EE3E00D8F7DC /* PKHUD.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E718BA722260EE3E00D8F7DC /* PKHUD.framework */; };
 		E718BA742260EE9F00D8F7DC /* PKHUD.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E718BA722260EE3E00D8F7DC /* PKHUD.framework */; };
 		E718BA752260EE9F00D8F7DC /* PKHUD.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = E718BA722260EE3E00D8F7DC /* PKHUD.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		E718BA792261231700D8F7DC /* PicSearcher.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E718BA772261231700D8F7DC /* PicSearcher.xcdatamodeld */; };
+		E718BA7F2261275200D8F7DC /* PersistentContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = E718BA7E2261275200D8F7DC /* PersistentContainer.swift */; };
+		E718BA81226128DF00D8F7DC /* SearchRecordManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E718BA80226128DF00D8F7DC /* SearchRecordManager.swift */; };
 		E721F9A2225E36D8005B39A0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E721F9A1225E36D8005B39A0 /* AppDelegate.swift */; };
 		E721F9A9225E36D9005B39A0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E721F9A8225E36D9005B39A0 /* Assets.xcassets */; };
 		E721F9AC225E36D9005B39A0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E721F9AA225E36D9005B39A0 /* LaunchScreen.storyboard */; };
@@ -103,6 +106,9 @@
 		E718BA6A2260C37700D8F7DC /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		E718BA6C2260CA3B00D8F7DC /* WebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
 		E718BA722260EE3E00D8F7DC /* PKHUD.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = PKHUD.framework; path = Carthage/Build/iOS/PKHUD.framework; sourceTree = SOURCE_ROOT; };
+		E718BA782261231700D8F7DC /* PicSearcher.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = PicSearcher.xcdatamodel; sourceTree = "<group>"; };
+		E718BA7E2261275200D8F7DC /* PersistentContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistentContainer.swift; sourceTree = "<group>"; };
+		E718BA80226128DF00D8F7DC /* SearchRecordManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchRecordManager.swift; sourceTree = "<group>"; };
 		E721F99E225E36D8005B39A0 /* PicSearcher.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PicSearcher.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E721F9A1225E36D8005B39A0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E721F9A8225E36D9005B39A0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -204,6 +210,16 @@
 			path = Localizable;
 			sourceTree = "<group>";
 		};
+		E718BA76226122EC00D8F7DC /* LocalDataManager */ = {
+			isa = PBXGroup;
+			children = (
+				E718BA772261231700D8F7DC /* PicSearcher.xcdatamodeld */,
+				E718BA7E2261275200D8F7DC /* PersistentContainer.swift */,
+				E718BA80226128DF00D8F7DC /* SearchRecordManager.swift */,
+			);
+			path = LocalDataManager;
+			sourceTree = "<group>";
+		};
 		E721F995225E36D8005B39A0 = {
 			isa = PBXGroup;
 			children = (
@@ -229,6 +245,7 @@
 		E721F9A0225E36D8005B39A0 /* PicSearcher */ = {
 			isa = PBXGroup;
 			children = (
+				E718BA76226122EC00D8F7DC /* LocalDataManager */,
 				E7F72DFC225E724F005808AA /* ThirdLib */,
 				E7F72E82225E83FB005808AA /* Api */,
 				E7F72DF9225E6CB0005808AA /* Common */,
@@ -530,6 +547,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E718BA81226128DF00D8F7DC /* SearchRecordManager.swift in Sources */,
 				E721F9A2225E36D8005B39A0 /* AppDelegate.swift in Sources */,
 				E718BA6D2260CA3B00D8F7DC /* WebViewController.swift in Sources */,
 				E7F72EC3225FE29D005808AA /* PhotoCollectionViewCell.swift in Sources */,
@@ -538,6 +556,7 @@
 				E7F72E6F225E80A6005808AA /* UIConstants.swift in Sources */,
 				E7F72E81225E837B005808AA /* NetworkMonitor.swift in Sources */,
 				E7F72EB9225F94CA005808AA /* SearchSuccessListViewModel.swift in Sources */,
+				E718BA7F2261275200D8F7DC /* PersistentContainer.swift in Sources */,
 				E7F72EB4225F69D9005808AA /* LocalizedStrings.swift in Sources */,
 				E7F72EAE225F55E1005808AA /* HomeViewProtocols.swift in Sources */,
 				E7F72EC1225FE0DA005808AA /* Extensions.swift in Sources */,
@@ -550,6 +569,7 @@
 				E7F72EA4225F48CD005808AA /* IndicatorButton.swift in Sources */,
 				E7F72EB2225F5885005808AA /* HomeViewDataProvider.swift in Sources */,
 				E7F72E88225E85F6005808AA /* FlickSearchResponseCacher.swift in Sources */,
+				E718BA792261231700D8F7DC /* PicSearcher.xcdatamodeld in Sources */,
 				E7F72EBD225F9691005808AA /* SearchSuccessListProtocols.swift in Sources */,
 				E7F72E84225E843B005808AA /* FlickrSearchApiService.swift in Sources */,
 			);
@@ -906,6 +926,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		E718BA772261231700D8F7DC /* PicSearcher.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				E718BA782261231700D8F7DC /* PicSearcher.xcdatamodel */,
+			);
+			currentVersion = E718BA782261231700D8F7DC /* PicSearcher.xcdatamodel */;
+			path = PicSearcher.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = E721F996225E36D8005B39A0 /* Project object */;
 }

@@ -8,7 +8,7 @@
 HomeView.SearchPlaceholder = "search key word";
 HomeView.KeyWordHasNoPics = "search tag has no picture, please try other tag";
 HomeView.Title = "Home Page";
-
+HomeView.DeleteTitle = "delete";
 Settings.Title = "Settings";
 DoneButtonTitle = "Done";
 Settings.PrivacyTitle = "PRIVACY";

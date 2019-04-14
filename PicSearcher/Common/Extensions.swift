@@ -39,19 +39,21 @@ extension FileManager {
         return dir
     }
     func fileSize(atPath path: String, unit: SizeUnitType = .MB) -> String {
-        let fileUrl = URL(fileURLWithPath: path)
         var totalSize: Double = 0.0
-        if let size = try? FileManager.default.allocatedSizeOfDirectory(at: fileUrl) {
-            totalSize = Double(size)
-        }
-        switch unit {
-        case .MB:
-            totalSize = totalSize/1024/1024
-        case .Byte:
-            break
-        case .KB:
-            totalSize = totalSize/1024
-        }
+        if fileExists(atPath: path) {
+            let fileUrl = URL(fileURLWithPath: path)
+            if let size = try? FileManager.default.allocatedSizeOfDirectory(at: fileUrl) {
+                totalSize = Double(size)
+            }
+            switch unit {
+            case .MB:
+                totalSize = totalSize/1024/1024
+            case .Byte:
+                break
+            case .KB:
+                totalSize = totalSize/1024
+            }
+        }       
         let doubleStr = String(format: "%.2f %@", totalSize, unit.rawValue)
         return doubleStr
     }
