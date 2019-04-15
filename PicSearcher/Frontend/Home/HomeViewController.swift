@@ -13,7 +13,7 @@ struct HomeViewStrings {
     static let InputPlaceholder = LocalizedStrings.HomeView.SearchPlaceholder
     static let Title = LocalizedStrings.HomeView.Title
     static let CellName = "HomeViewController.UITableViewCell"
-    static let SectionHeaderCellName = "HomeViewController.SectionHeaderUITableView
+    static let SectionHeaderCellName = "HomeViewController.SectionHeaderUITableView"
     static let SwipeDeleteTitle = NSLocalizedString("HomeView.DeleteTitle", comment: "swipe left delete")
 }
 struct HomeViewUX {
