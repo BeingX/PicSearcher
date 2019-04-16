@@ -9,18 +9,18 @@
 import Foundation
 import Alamofire
 
-struct FlickrSearchApiConfig {
-    static let BaseUrlString = "https://api.flickr.com/services/rest/"
-    static let PerPagePicCount = 21
-    static let ApiKey: [UInt32] = [51, 57, 106, 109, 111, 64, 119, 118, 121, 128, 132, 135, 91, 91, 93, 94, 105, 108, 109, 105, 115, 115, 118, 170, 129, 176, 127, 129, 182, 136, 143, 146]
+fileprivate struct FlickrSearchApiConfig {
+    fileprivate static let BaseUrlString = "https://api.flickr.com/services/rest/"
+    fileprivate static let PerPagePicCount = 21
+    fileprivate static let ApiKey: [UInt32] = [51, 57, 106, 109, 111, 64, 119, 118, 121, 128, 132, 135, 91, 91, 93, 94, 105, 108, 109, 105, 115, 115, 118, 170, 129, 176, 127, 129, 182, 136, 143, 146]
 }
 
-class FlickrSearchApiService {
-    let diskCacher = FlickSearchResponseCacher<FlickrSearchApiResponseModel>()
-    func cachedKeyWith(tags: String, page: Int) -> String {
+public class FlickrSearchApiService {
+    private let diskCacher = FlickSearchResponseCacher<FlickrSearchApiResponseModel>()
+    public func cachedKeyWith(tags: String, page: Int) -> String {
         return tags + "_" + String(page)
     }
-    func searchByTags(tags: String, page: Int?, completionHandler: @escaping (FlickrSearchApiResponseModel?, Error?) -> Void) {
+    public func searchByTags(tags: String, page: Int?, completionHandler: @escaping (FlickrSearchApiResponseModel?, Error?) -> Void) {
         if !NetworkMonitor.shared.reachabilityManager!.isReachable {
             let pageIndex = page ?? 1
             if let cacheResonse = try? self.diskCacher.fetchCachedReponse(key: cachedKeyWith(tags: tags, page: pageIndex)) {
@@ -58,7 +58,7 @@ class FlickrSearchApiService {
         
     }
     
-    enum UrlParameterKey: String {
+    private enum UrlParameterKey: String {
         case method
         case api_key
         case tags
@@ -73,7 +73,7 @@ class FlickrSearchApiService {
         case statFail
     }
     
-    func requestParameters(tags: String, page: Int, perPage: Int) -> [String: String] {
+    private func requestParameters(tags: String, page: Int, perPage: Int) -> [String: String] {
         let parameter: [String: String] = [
             UrlParameterKey.method.rawValue: "flickr.photos.search",
             UrlParameterKey.api_key.rawValue: StringMask(maskBte: FlickrSearchApiConfig.ApiKey).value()!,

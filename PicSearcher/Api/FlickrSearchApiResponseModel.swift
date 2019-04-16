@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct FlickrSearchApiResponseModel: Codable {
+public struct FlickrSearchApiResponseModel: Codable {
     let stat: String
     let code: Int?
     let message: String?
