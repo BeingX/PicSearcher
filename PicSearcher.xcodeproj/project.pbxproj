@@ -21,6 +21,7 @@
 		E721F9B7225E36D9005B39A0 /* PicSearcherTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E721F9B6225E36D9005B39A0 /* PicSearcherTests.swift */; };
 		E721F9C2225E36D9005B39A0 /* PicSearcherUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E721F9C1225E36D9005B39A0 /* PicSearcherUITests.swift */; };
 		E79C310A2263CD650016235B /* FlickrSearchApiResponseModelTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = E79C31092263CD650016235B /* FlickrSearchApiResponseModelTest.swift */; };
+		E79C31122265D73A0016235B /* FlickSearchResponseCacherTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = E79C31112265D73A0016235B /* FlickSearchResponseCacherTest.swift */; };
 		E7F72DE4225E3894005808AA /* Cartfile in Resources */ = {isa = PBXBuildFile; fileRef = E7F72DE3225E3894005808AA /* Cartfile */; };
 		E7F72DF0225E4766005808AA /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = E7F72DF2225E4766005808AA /* InfoPlist.strings */; };
 		E7F72DF8225E4816005808AA /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7F72DF7225E4816005808AA /* HomeViewController.swift */; };
@@ -121,6 +122,7 @@
 		E721F9C1225E36D9005B39A0 /* PicSearcherUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PicSearcherUITests.swift; sourceTree = "<group>"; };
 		E721F9C3225E36D9005B39A0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E79C31092263CD650016235B /* FlickrSearchApiResponseModelTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlickrSearchApiResponseModelTest.swift; sourceTree = "<group>"; };
+		E79C31112265D73A0016235B /* FlickSearchResponseCacherTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlickSearchResponseCacherTest.swift; sourceTree = "<group>"; };
 		E7F72DE3225E3894005808AA /* Cartfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Cartfile; sourceTree = "<group>"; };
 		E7F72DF1225E4766005808AA /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		E7F72DF4225E47C5005808AA /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
@@ -371,6 +373,7 @@
 			children = (
 				E7F72E8D225F43AB005808AA /* FlickrSearchApiServiceTest.swift */,
 				E79C31092263CD650016235B /* FlickrSearchApiResponseModelTest.swift */,
+				E79C31112265D73A0016235B /* FlickSearchResponseCacherTest.swift */,
 			);
 			path = Api;
 			sourceTree = "<group>";
@@ -584,6 +587,7 @@
 			files = (
 				E79C310A2263CD650016235B /* FlickrSearchApiResponseModelTest.swift in Sources */,
 				E7F72E90225F43C2005808AA /* StringMaskTest.swift in Sources */,
+				E79C31122265D73A0016235B /* FlickSearchResponseCacherTest.swift in Sources */,
 				E7F72E8E225F43AB005808AA /* FlickrSearchApiServiceTest.swift in Sources */,
 				E721F9B7225E36D9005B39A0 /* PicSearcherTests.swift in Sources */,
 			);

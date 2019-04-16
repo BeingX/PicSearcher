@@ -15,7 +15,7 @@ class SearchRecordManager: NSObject, NSFetchedResultsControllerDelegate {
     let appDelegate = AppDelegate.applicationDelegate
     fileprivate lazy var fetchedResultsController: NSFetchedResultsController<SearchRecord> = {
         let fetchRequest: NSFetchRequest<SearchRecord> = SearchRecord.fetchRequest()
-        let sortDescriptor = NSSortDescriptor(key: "date", ascending: true)
+        let sortDescriptor = NSSortDescriptor(key: "date", ascending: false)
         fetchRequest.sortDescriptors = [sortDescriptor]
         let fetchedResultsController = NSFetchedResultsController(fetchRequest: fetchRequest, managedObjectContext: appDelegate.persistentContainer.viewContext, sectionNameKeyPath: nil, cacheName: nil)
         fetchedResultsController.delegate = self

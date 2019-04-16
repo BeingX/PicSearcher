@@ -8,75 +8,65 @@
 
 import Foundation
 
-class FlickSearchResponseCacher<T: Codable> {
-    func cache(key: String, reponseModel: T) {
-        assert(!key.isEmpty, "key can not be empty")
-        guard !key.isEmpty else {
-            return
-        }
-        self.creatCacheDirIfNo()
-        let url = URL(fileURLWithPath: self.cacheFileFullPath(key: key))
-        do {
-            let jsonEncoder = JSONEncoder()
-            let jsonData = try jsonEncoder.encode(reponseModel)
-            try jsonData.write(to: url)
-        } catch {
-            print(error)
+public class FlickSearchResponseCacher<T: Codable> {
+    public var storePath: String {
+        get {
+            let documentPaths = NSSearchPathForDirectoriesInDomains(FileManager.SearchPathDirectory.cachesDirectory, FileManager.SearchPathDomainMask.userDomainMask, true)
+            let dir = documentPaths.first! + "/FlickSearchResponse"
+            return dir
         }
     }
+    public func cache(key: String, reponseModel: T) throws -> String? {
+        assert(!key.isEmpty, "key can not be empty")
+        guard !key.isEmpty else {
+            return nil
+        }
+        self.creatCacheDirIfNo()
+        let path = self.cacheFileFullPath(key: key)
+        let url = URL(fileURLWithPath: path)
+        let jsonEncoder = JSONEncoder()
+        let jsonData = try jsonEncoder.encode(reponseModel)
+        try jsonData.write(to: url)
+        return path
+    }
     
-    func fetchCachedReponse(key: String) -> T? {
+    public func fetchCachedReponse(key: String) throws -> T? {
         var responseModel: T?
         let filePath = self.cacheFileFullPath(key: key)
         let jsonDecoder = JSONDecoder()
         if FileManager.default.fileExists(atPath: filePath) {
-            if let url = URL(string: filePath), let jsonData = try? Data(contentsOf: url) {
-                responseModel = try? jsonDecoder.decode(T.self, from: jsonData)
+            if let jsonData = NSData(contentsOfFile: filePath) {
+                responseModel = try jsonDecoder.decode(T.self, from: jsonData as Data)
             }
         }
         return responseModel
     }
     
-    func clearAll() {
-        if FileManager.default.fileExists(atPath: self.cacheDir()) {
-            do {
-                try FileManager.default.removeItem(atPath: self.cacheDir())
-            } catch {
-                print(error)
-            }
+    public func clearAll() throws {
+        if FileManager.default.fileExists(atPath: storePath) {
+            try FileManager.default.removeItem(atPath: storePath)
         }
     }
     
-    func clearCachedReponse(key: String) {
+    public func deleteCachedReponse(key: String) throws {
         let filePath = self.cacheFileFullPath(key: key)
         if FileManager.default.fileExists(atPath: filePath) {
+           try FileManager.default.removeItem(atPath: filePath)
+        }
+    }
+    
+    private func creatCacheDirIfNo() {
+        if !FileManager.default.fileExists(atPath: storePath) {
             do {
-                try FileManager.default.removeItem(atPath: filePath)
+                try FileManager.default.createDirectory(atPath: storePath, withIntermediateDirectories: false, attributes: nil)
             } catch {
                 print(error)
             }
         }
     }
     
-    func creatCacheDirIfNo() {
-        if !FileManager.default.fileExists(atPath: self.cacheDir()) {
-            do {
-                try FileManager.default.createDirectory(atPath: self.cacheDir(), withIntermediateDirectories: false, attributes: nil)
-            } catch {
-                print(error)
-            }
-        }
-    }
-    
-    func cacheFileFullPath(key: String) -> String {
+    private func cacheFileFullPath(key: String) -> String {
         let fileName = "/" + key
-        return self.cacheDir() + fileName.lowercased()
-    }
-    
-    func cacheDir() -> String {
-        let documentPaths = NSSearchPathForDirectoriesInDomains(FileManager.SearchPathDirectory.cachesDirectory, FileManager.SearchPathDomainMask.userDomainMask, true)
-        let dir = documentPaths.first! + "/cache"
-        debugPrint(dir)
-        return dir
+        return storePath + fileName.lowercased()
     }
 }

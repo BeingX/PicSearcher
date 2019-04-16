@@ -39,8 +39,7 @@ class HomeViewController: UIViewController, SearchRecordManagerDelegate {
         return manager
     }
     var searchView: SearchInputView = {
-       let view  = SearchInputView()
-        view.frame = CGRect(x: 0, y: 0, width: UIScreen.width, height: HomeViewUX.TableHeaderViewHeight)
+       let view  = SearchInputView(frame: CGRect(x: 0, y: 0, width: 0, height: HomeViewUX.TableHeaderViewHeight))
         return view
     }()
     lazy var tableView: UITableView = {
@@ -162,7 +161,7 @@ extension HomeViewController: UITableViewDataSource, UITableViewDelegate {
     }
 
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        let cell = tableView.dequeueReusableCell(withIdentifier: HomeViewStrings.CellName) ?? UITableViewCell(style: .default, reuseIdentifier: HomeViewStrings.SectionHeaderCellName)
+        let cell = tableView.dequeueReusableCell(withIdentifier: HomeViewStrings.SectionHeaderCellName) ?? UITableViewCell(style: .default, reuseIdentifier: HomeViewStrings.SectionHeaderCellName)
         cell.imageView?.image = UIImage(named: HomeViewUX.IconHistory)
         cell.contentView.backgroundColor = UIColor.Grey20
         return cell
@@ -215,14 +214,14 @@ class SearchInputView: UIView {
         self.backgroundColor = HomeViewUX.SearchViewBackground
         self.addSubview(goButton)
         goButton.snp.makeConstraints { (maker) in
-            maker.centerY.equalTo(self.safeAreaLayoutGuide)
-            maker.trailing.equalTo(self.safeAreaLayoutGuide).offset(-HomeViewUX.verticalPadding)
+            maker.centerY.equalTo(self)
+            maker.trailing.equalTo(self).offset(-HomeViewUX.verticalPadding)
             maker.height.equalTo(HomeViewUX.GoButtonHeight)
             maker.width.equalTo(HomeViewUX.GoButtonWidth)
         }
         self.addSubview(searchBar)
         searchBar.snp.makeConstraints { (maker) in
-            maker.leading.equalTo(self.safeAreaLayoutGuide).offset(HomeViewUX.verticalPadding)
+            maker.leading.equalTo(self).offset(HomeViewUX.verticalPadding)
             maker.centerY.equalTo(goButton)
             maker.height.equalTo(HomeViewUX.SearchBarHeight)
             maker.trailing.equalTo(goButton.snp.leading).offset(-HomeViewUX.SpaceBetweenSearchTextAndGoButton)

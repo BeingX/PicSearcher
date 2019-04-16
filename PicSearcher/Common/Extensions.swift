@@ -9,13 +9,13 @@
 import Foundation
 import UIKit
 
-extension FileManager {
-    enum SizeUnitType: String {
+public extension FileManager {
+    public enum SizeUnitType: String {
         case MB
         case Byte
         case KB
     }
-    func cachesDirectoryFileSize(unit: SizeUnitType = .MB) -> String {
+    public func cachesDirectoryFileSize(unit: SizeUnitType = .MB) -> String {
         var totalSize = "0.00"
         if let path = cachesDirectoryPath() {
             totalSize = fileSize(atPath: path, unit: unit)
@@ -23,7 +23,7 @@ extension FileManager {
         return totalSize
     }
 
-    func clearCachesDirectory() {
+    public func clearCachesDirectory() {
         if let path = cachesDirectoryPath() {
             do {
                 try FileManager.default.removeItem(atPath: path)
@@ -38,7 +38,7 @@ extension FileManager {
         let dir = documentPaths.first
         return dir
     }
-    func fileSize(atPath path: String, unit: SizeUnitType = .MB) -> String {
+    public func fileSize(atPath path: String, unit: SizeUnitType = .MB) -> String {
         var totalSize: Double = 0.0
         if fileExists(atPath: path) {
             let fileUrl = URL(fileURLWithPath: path)
@@ -53,7 +53,7 @@ extension FileManager {
             case .KB:
                 totalSize = totalSize/1024
             }
-        }       
+        }
         let doubleStr = String(format: "%.2f %@", totalSize, unit.rawValue)
         return doubleStr
     }

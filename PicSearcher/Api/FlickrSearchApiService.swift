@@ -23,7 +23,7 @@ class FlickrSearchApiService {
     func searchByTags(tags: String, page: Int?, completionHandler: @escaping (FlickrSearchApiResponseModel?, Error?) -> Void) {
         if !NetworkMonitor.shared.reachabilityManager!.isReachable {
             let pageIndex = page ?? 1
-            if let cacheResonse = self.diskCacher.fetchCachedReponse(key: cachedKeyWith(tags: tags, page: pageIndex)) {
+            if let cacheResonse = try? self.diskCacher.fetchCachedReponse(key: cachedKeyWith(tags: tags, page: pageIndex)) {
                 completionHandler(cacheResonse, nil)
                 return
             }
@@ -41,7 +41,7 @@ class FlickrSearchApiService {
                     
                     if responseModel.stat == "ok"{
                         let cacheKey = self?.cachedKeyWith(tags: tags, page: (responseModel.photos?.page)!)
-                        self?.diskCacher.cache(key: cacheKey!, reponseModel: responseModel)
+                        try self?.diskCacher.cache(key: cacheKey!, reponseModel: responseModel)
                         completionHandler(responseModel, nil)
                     } else {
                         completionHandler(nil, ApiError.serviceError)

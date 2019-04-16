@@ -17,8 +17,12 @@ class FlickrSearchApiServiceTest: XCTestCase {
     
     override func tearDown() {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
-        sut.diskCacher.clearCachedReponse(key: sut.cachedKeyWith(tags: "beauty", page: 1))
-        sut.diskCacher.clearCachedReponse(key: sut.cachedKeyWith(tags: "xx xx", page: 1))
+        do {
+            try sut.diskCacher.clearAll()
+        } catch let error {
+            XCTFail(error.localizedDescription)
+        }
+        
     }
     
     func testSearchByTags_general() {
