@@ -1,0 +1,25 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<testsuites name='PicSearcherUITests.xctest' tests='10' failures='0'>
+  <testsuite name='PicSearcherTests.FlickSearchResponseCacherTest' tests='1' failures='0'>
+    <testcase classname='PicSearcherTests.FlickSearchResponseCacherTest' name='testCacheAndFetchAndDelete' time='0.010'/>
+  </testsuite>
+  <testsuite name='PicSearcherTests.FlickrSearchApiResponseModelTest' tests='2' failures='0'>
+    <testcase classname='PicSearcherTests.FlickrSearchApiResponseModelTest' name='testFailResponseCodable' time='0.003'/>
+    <testcase classname='PicSearcherTests.FlickrSearchApiResponseModelTest' name='testSuccessResponseCodable' time='0.002'/>
+  </testsuite>
+  <testsuite name='PicSearcherTests.FlickrSearchApiServiceTest' tests='2' failures='0'>
+    <testcase classname='PicSearcherTests.FlickrSearchApiServiceTest' name='testSearchByTags_general' time='2.001'/>
+    <testcase classname='PicSearcherTests.FlickrSearchApiServiceTest' name='testSearchByTags_mid_whitespace' time='0.362'/>
+  </testsuite>
+  <testsuite name='PicSearcherTests.PicSearcherTests' tests='2' failures='0'>
+    <testcase classname='PicSearcherTests.PicSearcherTests' name='testExample' time='0.001'/>
+    <testcase classname='PicSearcherTests.PicSearcherTests' name='testPerformanceExample' time='0.320'/>
+  </testsuite>
+  <testsuite name='PicSearcherTests.StringMaskTest' tests='2' failures='0'>
+    <testcase classname='PicSearcherTests.StringMaskTest' name='testByteToString' time='0.001'/>
+    <testcase classname='PicSearcherTests.StringMaskTest' name='testMaskString' time='0.001'/>
+  </testsuite>
+  <testsuite name='PicSearcherUITests.PicSearcherUITests' tests='1' failures='0'>
+    <testcase classname='PicSearcherUITests.PicSearcherUITests' name='testExample' time='6.572'/>
+  </testsuite>
+</testsuites>
