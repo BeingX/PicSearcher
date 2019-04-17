@@ -107,7 +107,7 @@ public extension FileManager {
         for item in enumerator {
             
             // Bail out on errors from the errorHandler.
-            if enumeratorError != nil { break }
+//            if enumeratorError != nil { break }
             // Add up individual file sizes.
             if let contentItemURL = item as? URL {
                 accumulatedSize += try contentItemURL.regularFileAllocatedSize()
@@ -115,7 +115,7 @@ public extension FileManager {
         }
         
         // Rethrow errors from errorHandler.
-        if let error = enumeratorError { throw error }
+//        if let error = enumeratorError { throw error }
         
         return accumulatedSize
     }
