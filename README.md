@@ -1,5 +1,6 @@
 # PicSearcher
 This is a demo iOS app to search  and show photos in flickr. 
+
 ## swift version
 4.2
 
@@ -18,3 +19,13 @@ This is a demo iOS app to search  and show photos in flickr.
 - Save your favorite pictures to an album
 - Manage search records
 - ...
+
+## Code Architecture
+
+![](CodeArchitecture.png)
+##  Main Technology
+- Server Communicating
+- CoreData
+- server data Caching
+- Unit Test
+- Autolayout
