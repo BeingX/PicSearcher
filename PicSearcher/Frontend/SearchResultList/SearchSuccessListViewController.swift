@@ -15,9 +15,6 @@ struct SearchSuccessListViewUX {
     static let CollectionBackgroundColor = UIColor.White100
     static let CollectionInteritemSpacing: CGFloat = 5
     static let CollectionLineSpacing: CGFloat = 5
-    static let CollectionCol: CGFloat = 3
-    static let CollectionItemWidth: CGFloat = floor((UIScreen.width - (CollectionCol-1)*CollectionInteritemSpacing)/3)
-    static let CollectionItemHeight: CGFloat = CollectionItemWidth * 1.3
     static let collectionInsets = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
     static let CollectionCellName = "PhotoCollectionViewCell"
 }
@@ -34,7 +31,6 @@ class SearchSuccessListViewController: UIViewController {
     let footer = MJRefreshAutoNormalFooter()
     lazy var collectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
-        layout.itemSize = CGSize(width: SearchSuccessListViewUX.CollectionItemWidth, height: SearchSuccessListViewUX.CollectionItemHeight)
         layout.minimumLineSpacing = SearchSuccessListViewUX.CollectionLineSpacing
         layout.minimumInteritemSpacing = SearchSuccessListViewUX.CollectionInteritemSpacing
         layout.sectionInset = SearchSuccessListViewUX.collectionInsets
@@ -93,9 +89,15 @@ class SearchSuccessListViewController: UIViewController {
         browser.initializePageIndex(beginIndex)
         present(browser, animated: true, completion: {})
     }
+    override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
+        super.viewWillTransition(to: size, with: coordinator)
+        coordinator.animate(alongsideTransition: nil) { _ in
+            self.collectionView.reloadData()
+        }
+    }
 }
 
-extension SearchSuccessListViewController: UICollectionViewDataSource, UICollectionViewDelegate {
+extension SearchSuccessListViewController: UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return viewModel.photos.count
     }
@@ -113,6 +115,16 @@ extension SearchSuccessListViewController: UICollectionViewDataSource, UICollect
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         collectionView.deselectItem(at: indexPath, animated: true)
         browsePicsFullScreen(beginIndex: indexPath.item)
+    }
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        let safeSize = self.view.safeAreaLayoutGuide.layoutFrame.size
+        var collectionCol: CGFloat = 3
+        if  self.traitCollection.horizontalSizeClass == .regular || self.traitCollection.verticalSizeClass == .compact {
+            collectionCol = 5
+        }
+        let collectionItemWidth: CGFloat = floor((safeSize.width - (collectionCol-1)*SearchSuccessListViewUX.CollectionInteritemSpacing)/collectionCol)
+        let collectionItemHeight: CGFloat = collectionItemWidth * 1.3
+        return CGSize(width: collectionItemWidth, height: collectionItemHeight)
     }
     
 }

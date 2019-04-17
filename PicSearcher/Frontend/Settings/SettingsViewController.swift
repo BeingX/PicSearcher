@@ -51,7 +51,7 @@ class SettingsViewController: UIViewController {
         
         view.addSubview(tableView)
         tableView.snp.makeConstraints { (maker) in
-            maker.edges.equalToSuperview()
+            maker.edges.equalTo(self.view.safeAreaLayoutGuide)
         }
         self.updateSettingsItems()
     }

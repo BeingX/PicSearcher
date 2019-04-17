@@ -8,10 +8,16 @@
 
 import Foundation
 import Alamofire
+import UIKit
 
 fileprivate struct FlickrSearchApiConfig {
     fileprivate static let BaseUrlString = "https://api.flickr.com/services/rest/"
-    fileprivate static let PerPagePicCount = 21
+    fileprivate static var PerPagePicCount: Int {
+        get {
+            
+            return UIDevice.current.userInterfaceIdiom == .pad ? 60 : 30
+        }
+    }
     fileprivate static let ApiKey: [UInt32] = [51, 57, 106, 109, 111, 64, 119, 118, 121, 128, 132, 135, 91, 91, 93, 94, 105, 108, 109, 105, 115, 115, 118, 170, 129, 176, 127, 129, 182, 136, 143, 146]
 }
 
@@ -41,7 +47,7 @@ public class FlickrSearchApiService {
                     
                     if responseModel.stat == "ok"{
                         let cacheKey = self?.cachedKeyWith(tags: tags, page: (responseModel.photos?.page)!)
-                        try self?.diskCacher.cache(key: cacheKey!, reponseModel: responseModel)
+                        _ = try self?.diskCacher.cache(key: cacheKey!, reponseModel: responseModel)
                         completionHandler(responseModel, nil)
                     } else {
                         completionHandler(nil, ApiError.serviceError)

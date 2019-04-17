@@ -66,8 +66,8 @@ class HomeViewController: UIViewController, SearchRecordManagerDelegate {
     func addSubview() {
         view.addSubview(tableView)
         tableView.snp.makeConstraints { (maker) in
-            maker.top.equalTo(self.view)
-            maker.leading.trailing.bottom.equalTo(self.view)
+            maker.top.equalTo(self.view.safeAreaLayoutGuide)
+            maker.leading.trailing.bottom.equalTo(self.view.safeAreaLayoutGuide)
         }
         tableView.tableHeaderView = searchView
     }
