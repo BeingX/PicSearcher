@@ -35,6 +35,9 @@
 		E79C3136226728110016235B /* MJRefresh.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = E79C3119226727EE0016235B /* MJRefresh.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		E79C3137226728110016235B /* PKHUD.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E79C311B226727EE0016235B /* PKHUD.framework */; };
 		E79C3138226728110016235B /* PKHUD.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = E79C311B226727EE0016235B /* PKHUD.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		E79C313C22672E180016235B /* AppCenterAnalytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E79C313922672E170016235B /* AppCenterAnalytics.framework */; };
+		E79C313D22672E180016235B /* AppCenter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E79C313A22672E170016235B /* AppCenter.framework */; };
+		E79C313E22672E180016235B /* AppCenterCrashes.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E79C313B22672E170016235B /* AppCenterCrashes.framework */; };
 		E7F72DE4225E3894005808AA /* Cartfile in Resources */ = {isa = PBXBuildFile; fileRef = E7F72DE3225E3894005808AA /* Cartfile */; };
 		E7F72DF0225E4766005808AA /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = E7F72DF2225E4766005808AA /* InfoPlist.strings */; };
 		E7F72DF8225E4816005808AA /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7F72DF7225E4816005808AA /* HomeViewController.swift */; };
@@ -128,6 +131,9 @@
 		E79C3122226727F60016235B /* SDWebImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = SDWebImage.framework; sourceTree = "<group>"; };
 		E79C3123226727F60016235B /* ToastSwiftFramework.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ToastSwiftFramework.framework; sourceTree = "<group>"; };
 		E79C3124226727F60016235B /* SnapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = SnapKit.framework; sourceTree = "<group>"; };
+		E79C313922672E170016235B /* AppCenterAnalytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AppCenterAnalytics.framework; sourceTree = "<group>"; };
+		E79C313A22672E170016235B /* AppCenter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AppCenter.framework; sourceTree = "<group>"; };
+		E79C313B22672E170016235B /* AppCenterCrashes.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AppCenterCrashes.framework; sourceTree = "<group>"; };
 		E7F72DE3225E3894005808AA /* Cartfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Cartfile; sourceTree = "<group>"; };
 		E7F72DF1225E4766005808AA /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		E7F72DF4225E47C5005808AA /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
@@ -167,6 +173,9 @@
 				E7F72EAC225F50DC005808AA /* QXSwiftKit.framework in Frameworks */,
 				E79C312D226728110016235B /* SnapKit.framework in Frameworks */,
 				E79C3137226728110016235B /* PKHUD.framework in Frameworks */,
+				E79C313C22672E180016235B /* AppCenterAnalytics.framework in Frameworks */,
+				E79C313E22672E180016235B /* AppCenterCrashes.framework in Frameworks */,
+				E79C313D22672E180016235B /* AppCenter.framework in Frameworks */,
 				E79C3120226727EE0016235B /* IQKeyboardManagerSwift.framework in Frameworks */,
 				E79C311D226727EE0016235B /* MJRefresh.framework in Frameworks */,
 				E79C312F226728110016235B /* ToastSwiftFramework.framework in Frameworks */,
@@ -333,6 +342,9 @@
 		E7F72DFC225E724F005808AA /* ThirdLib */ = {
 			isa = PBXGroup;
 			children = (
+				E79C313A22672E170016235B /* AppCenter.framework */,
+				E79C313922672E170016235B /* AppCenterAnalytics.framework */,
+				E79C313B22672E170016235B /* AppCenterCrashes.framework */,
 				E79C3122226727F60016235B /* SDWebImage.framework */,
 				E79C3121226727F60016235B /* SKPhotoBrowser.framework */,
 				E79C3124226727F60016235B /* SnapKit.framework */,
