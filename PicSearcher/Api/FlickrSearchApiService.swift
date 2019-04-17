@@ -22,7 +22,7 @@ fileprivate struct FlickrSearchApiConfig {
 }
 
 public class FlickrSearchApiService {
-    private let diskCacher = FlickSearchResponseCacher<FlickrSearchApiResponseModel>()
+    let diskCacher = FlickSearchResponseCacher<FlickrSearchApiResponseModel>()
     public func cachedKeyWith(tags: String, page: Int) -> String {
         return tags + "_" + String(page)
     }
